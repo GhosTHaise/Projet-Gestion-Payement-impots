@@ -1,0 +1,30 @@
+{
+  "name": "cours-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app/server.js",
+    "scss": "sass --watch app/views/static/styles/sass/style.scss app/views/static/styles/css/style.css",
+    "postcss": "npx tailwind build -i app/views/static/styles/css/style.css -o app/views/static/styles/css/dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "GhosTHaise-Fitiavana*Sambatra",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.7.0",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.2",
+    "node-sass-middleware": "^1.0.1",
+    "sass": "^1.55.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.1"
+  }
+}
