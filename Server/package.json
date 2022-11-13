@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app/server.js",
+    "start": "nodemon app/server.js",
     "scss": "sass --watch app/views/static/styles/sass/style.scss app/views/static/styles/css/style.css",
     "postcss": "npx tailwind build -i app/views/static/styles/css/style.css -o app/views/static/styles/css/dist/output.css --watch"
   },

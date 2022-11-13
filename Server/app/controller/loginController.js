@@ -1,24 +1,27 @@
 const {login} = require("../model/Schema");
-
 const userInfo = async(req,res) => {
     const data = await login.find({_id : req.params.id});
     data?.length != 1 ? res.status(400).json({
         error : "Aucun donne ne corespond a cet id !"
     }) : res.status(200).json(data);
+    console.log(req.session.user)
 }
 
 const userLoginValidation = async (req,res) => {
-    const data = await login.find({
+    console.log(req.session.user)
+    const [data] = await login.find({
         $and : [
-            {username : req.body.username},
+            {email : req.body.email},
             {password : req.body.password}
         ]
-    })
-    data.length != 1 ? 
-    res.status(200).json({"message" : "Check your username or your password"}) :
+    });
+    req.session.user = {...data}
+    data == undefined ? 
+    res.status(400).json({"message" : "Check your username or your password"}) :
     (
-        res.status(200).json({"message" : "You are logged successfully"}));
-        res.session.user = {...data}
+        res.status(200).json({"message" : "You are logged successfully"})
+    );
+    
 }
 
 const userRegistered = (req,res) => {

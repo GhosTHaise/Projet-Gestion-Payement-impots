@@ -7,12 +7,14 @@ mongoose.connect(process.env.MONGODB_URI,
     .catch((e) => console.log('Connexion à MongoDB échouée !',e));
 
 const Schema_user = mongoose.Schema({
-    username : {type : String,required : true},
+    firstname : {type : String,required : true},
+    lastname : {type : String,required : true},
     email : {type : String,required : true},
+    tel : {type : String,required : true,minLength : 13},
+    profil : {type : String,required : true},
     password : {type : String,required : true}
 })
 
 module.exports = {
-    article : mongoose.model('article', Schema_article),
     login : mongoose.model('login',Schema_user)
 }
