@@ -1,11 +1,4 @@
 const {login} = require("../model/Schema");
-const userInfo = async(req,res) => {
-    const data = await login.find({_id : req.params.id});
-    data?.length != 1 ? res.status(400).json({
-        error : "Aucun donne ne corespond a cet id !"
-    }) : res.status(200).json(data);
-    console.log(req.session.user)
-}
 
 const userLoginValidation = async (req,res) => {
     console.log(req.session.user)
@@ -41,7 +34,6 @@ _schema.save()
 }
 
 module.exports = {
-    userInfo,
     userRegistered,
     userLoginValidation
 }

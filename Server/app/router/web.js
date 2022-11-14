@@ -1,7 +1,7 @@
 const express = require("express")
 const Router = express.Router();
 
-const {loginController} = require("../controller");
+const {loginController,userController} = require("../controller");
 const InitWebRoute = (app) => {
     //https
     app.use((req,res,next)=>{
@@ -16,11 +16,13 @@ const InitWebRoute = (app) => {
 
     //Home Route
         //Login&Registered
-        Router.get("/api/login/:id",loginController.userInfo);
         Router.post("/api/login",loginController.userRegistered);
         Router.post("/api/loginValidation",loginController.userLoginValidation);
     //Home Route END
-
+    //User Roure
+        Router.get("/api/user/:id",userController.userInfo);
+        Router.post("/api/user/:id",userController.userInfoUpdate);
+    //User Route END
     app.use(Router);
 
 
