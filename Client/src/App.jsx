@@ -1,10 +1,13 @@
-import React from 'react'
+import {useState} from 'react'
+import {Navbar} from "./components"
 import styles from './style'
-import LoginForm from './components/LoginForm'
-const App = () => (
-    <div className={`${styles.paddingX} h-[100vh] ${styles.paddingY} bg-primary`}>
-            <LoginForm />
+const App = () => { 
+    const [User_session_data, setUser_session_data] = useState([]);
+    return(
+    <div className={`${styles.paddingX} w-full h-[100vh] bg-primary`}>
+        <Navbar />
     </div>
-)
+    )
+}
 
 export default App
