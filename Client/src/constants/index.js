@@ -8,7 +8,7 @@ export const navlinks = [
         title :"What is E-Tax ?"
     },
     {
-        id : "wlients",
+        id : "clients",
         title : "Clients"
     }
 ]

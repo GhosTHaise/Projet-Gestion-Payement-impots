@@ -1,6 +1,8 @@
-import React from 'react'
+import {useState} from 'react'
 import { navlinks } from '../constants'
+import { menu , close } from '../assets';
 const Navbar = () => {
+  const [Toggle, setToggle] = useState(false);
   return (
     <div className='w-full flex py-6 justify-between items-center navbar'>
         <div className='w-[124px] h-[32px] text-white text-[18px] text-center flex items-center'>
@@ -16,9 +18,33 @@ const Navbar = () => {
                     ))
                 }
         </ul>
-        <div className="flex flex-row items-center">
+        <div className="sm:flex hidden flex-row items-center">
             <div className='text-white text-[14px] mr-5 cursor-pointer'>Sign In</div>
-            <div className='text-white text-[14px] cursor-pointer'>Sign Up</div>
+            <div className='text-white text-[14px] rounded-sm py-1 px-3 bg-darkOrange cursor-pointer'>Sign Up</div>
+        </div>
+        <div className='sm:hidden flex flex-1 justify-end items-center'>
+                <img className={`w-[28px] h-[28px] object-contain cursor-pointer`}
+                 src={!Toggle ? menu : close} alt="menu" 
+                 onClick={() => setToggle(!Toggle)}
+                 />
+                 <div className={`${Toggle ? "flex" : "hidden"} flex-col p-6 bg-black-gradient absolute 
+                 top-20 right-0 mx-4 my-2 min-w-[180px] rounded-xl sidebar`}>
+                      <ul className='list-none flex justify-end flex-col items-end flex-1'>  
+                        {navlinks.map((navlink,index)=> (
+                            <li className={`font-poppins font-normal cursor-pointer text-white text-[16px]
+                              mb-5
+                            `} key={navlink.id}>
+                                <a href={`#${navlink.id}`}>
+                                    {navlink.title}
+                                </a>
+                            </li>
+                        ))}
+                      </ul>
+                      <div className=" flex flex-row items-center mb-2">
+                          <div className='text-white text-[14px] mr-5 cursor-pointer'>Sign In</div>
+                          <div className='text-white text-[14px] rounded-sm py-1 px-3 bg-darkOrange cursor-pointer'>Sign Up</div>
+                      </div>
+                 </div>
         </div>
     </div>
   )
