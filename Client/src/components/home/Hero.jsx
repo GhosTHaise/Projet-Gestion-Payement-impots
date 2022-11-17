@@ -1,4 +1,5 @@
 import styles from "../../style"
+import GetStarted from "./GetStarted"
 
 const Hero = () => {
   return (
@@ -11,6 +12,14 @@ const Hero = () => {
                         <span className="text-white">1 Mounth</span> Account
                   </p>
               </div>
+              <div className="flex flex-row justify-between items-end center w-full">
+                    <h1 className="text-white flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] ss:leading-[100px] leading-[75px]">
+                      The Next <br className="sm:hidden block" />{" "}<span className="text2-gradient">Generation</span>
+                    </h1>
+                    <div className="md:flex hidden md:mr-4 mr-0">
+                        <GetStarted />
+                    </div>
+              </div>  
         </div>
         <div className={``}></div>
     </section>
