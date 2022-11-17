@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.23" height="24.229" viewBox="0 0 24.23 24.229">
+  <g id="Groupe_19" data-name="Groupe 19" transform="translate(-50 -134)">
+    <path id="Union_1" data-name="Union 1" d="M11.5,23.271,10.26,22.032h-1.7a4,4,0,0,1-4-4v-1.7L3.385,15.156a4,4,0,0,1,0-5.656L4.557,8.328V6.556a4,4,0,0,1,4-4h1.772L11.5,1.385a4,4,0,0,1,5.657,0l1.171,1.171h1.7a4,4,0,0,1,4,4v1.7L25.271,9.5a4,4,0,0,1,0,5.656l-1.238,1.239v1.638a4,4,0,0,1-4,4H18.4l-1.239,1.239a4,4,0,0,1-5.657,0Z" transform="translate(47.787 133.787)" fill="rgba(255,255,255,0.11)"/>
+    <g id="Icon_" data-name="Icon %" transform="translate(-199 -97.897)">
+      <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="2.13" cy="1.826" rx="2.13" ry="1.826" transform="translate(255 238.177)" fill="rgba(255,72,32,0.85)"/>
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="1.826" cy="2.13" rx="1.826" ry="2.13" transform="translate(263.52 246.088)" fill="rgba(255,72,32,0.85)"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="3.26" height="15.51" rx="1.63" transform="matrix(0.777, 0.629, -0.629, 0.777, 264.761, 236.897)" fill="#ff4820"/>
+    </g>
+  </g>
+</svg>
