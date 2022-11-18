@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {Navbar,Hero} from "./components"
+import Stats from './components/home/Stats';
 import styles from './style'
 const App = () => { 
     const [User_session_data, setUser_session_data] = useState([]);
@@ -19,6 +20,7 @@ const App = () => {
         <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
                 {/* all section composant */}
+                <Stats />
             </div>
         </div>
     </div>

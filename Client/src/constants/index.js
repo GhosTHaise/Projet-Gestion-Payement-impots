@@ -12,3 +12,21 @@ export const navlinks = [
         title : "Clients"
     }
 ]
+
+export const stats = [ 
+    {
+        id : "stats-1",
+        title : "user active",
+        value : "3800+"
+    },
+    {
+        id : "stats-2",
+        title : "bank partener",
+        value : "15+"
+    },
+    {
+        id : "stats-3",
+        title : "transactions",
+        value : "230M+"
+    }
+]
