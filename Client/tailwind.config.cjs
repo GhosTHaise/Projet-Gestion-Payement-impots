@@ -10,6 +10,7 @@ module.exports = {
         darkOrange : "#FF4820",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
+        error : "red"
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

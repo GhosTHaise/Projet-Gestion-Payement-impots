@@ -21,7 +21,7 @@ const index = ({navigate}) => (
                         <Stats />
                     </div>
                 </div>
-            </div>
+    </div>
   )
 
 
