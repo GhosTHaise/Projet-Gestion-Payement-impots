@@ -1,7 +1,7 @@
 import styles from "../../style"
 import GetStarted from "./GetStarted"
 import {robot,discount} from "../../assets"
-
+import { Link } from "react-router-dom"
 const Hero = () => {
   return (
     <section id='home' className={`flex md:flex-row flex-col ${styles.paddingY}`}>
@@ -18,7 +18,9 @@ const Hero = () => {
                       The Next <br className="sm:hidden block" />{" "}<span className="text2-gradient">Generation</span>
                     </h1>
                     <div className="ss:flex hidden md:mr-4 mr-0">
+                      <Link to="SignIn">
                         <GetStarted />
+                      </Link>
                     </div>
               </div> 
               <h1 className="font-poppins font-semibold text-white ss:text-[68px] text-[52px] ss:leading-[100px] leading-[75px]">
@@ -38,7 +40,9 @@ const Hero = () => {
           <div className='absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient'></div>
         </div>
         <div className={` ss:hidden ${styles.flexCenter}`}>
+          <Link to="SignIn" >
             <GetStarted />
+          </Link>
         </div>
     </section>
   )

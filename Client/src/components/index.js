@@ -1,8 +1,5 @@
-import Navbar from "./Navbar";
-import Hero from "./home/Hero";
-import GetStarted from "./home/GetStarted";
+import Home from "./home"
+import Dashboard from "./Dashboard"
 export  {
-    Navbar,
-    Hero,
-    GetStarted
+    Home
 }

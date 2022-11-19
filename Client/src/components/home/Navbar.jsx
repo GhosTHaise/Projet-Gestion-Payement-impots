@@ -1,6 +1,8 @@
 import {useState} from 'react'
-import { navlinks } from '../constants'
-import { menu , close } from '../assets';
+import { navlinks } from '../../constants'
+import { menu , close } from '../../assets';
+import {DataContext} from '../../context';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [Toggle, setToggle] = useState(false);
   return (
@@ -19,8 +21,8 @@ const Navbar = () => {
                 }
         </ul>
         <div className="sm:flex hidden flex-row items-center">
-            <div className='text-white text-[14px] mr-5 cursor-pointer'>Sign In</div>
-            <div className='text-white text-[14px] rounded-sm py-1 px-3 bg-darkOrange cursor-pointer'>Sign Up</div>
+            <Link to="/SignIn"><div className='text-white text-[14px] mr-5 cursor-pointer'>Sign In</div></Link>
+            <Link to="/SignUp"><div className='text-white text-[14px] rounded-sm py-1 px-3 bg-darkOrange cursor-pointer'>Sign Up</div></Link>
         </div>
         <div className='sm:hidden flex flex-1 justify-end items-center'>
                 <img className={`w-[28px] h-[28px] object-contain cursor-pointer`}
@@ -41,8 +43,8 @@ const Navbar = () => {
                         ))}
                       </ul>
                       <div className=" flex flex-row items-center mb-2">
-                          <div className='text-white text-[14px] mr-5 cursor-pointer'>Sign In</div>
-                          <div className='text-white text-[14px] rounded-sm py-1 px-3 bg-darkOrange cursor-pointer'>Sign Up</div>
+                          <Link to="/SignIn"><div className='text-white text-[14px] mr-5 cursor-pointer'>Sign In</div></Link>
+                          <Link to="/SignUp"><div className='text-white text-[14px] rounded-sm py-1 px-3 bg-darkOrange cursor-pointer'>Sign Up</div></Link>
                       </div>
                  </div>
         </div>

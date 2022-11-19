@@ -1,33 +1,24 @@
-import {useState} from 'react'
-import {Navbar,Hero} from "./components"
-import Stats from './components/home/Stats';
-import styles from './style'
+import {useState,useContext} from 'react'
+import { Route,Routes, useNavigate } from 'react-router-dom';
+import {Home} from "./components"
+import { DataContext } from './context';
 const App = () => { 
     const [User_session_data, setUser_session_data] = useState([]);
+    const {navigate} = useContext(DataContext);
     return(
-   (User_session_data?.length  <= 0) ? 
-   <div className={` w-full min-h-[100vh] overflow-hidden bg-primary`}>
-        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-            <div className={`${styles.boxWidth}`}>
-                <Navbar />
+    <Routes>
+        <Route path='/' element={
+        (User_session_data?.length  <= 0) ? 
+                <Home navigate={navigate} />
+            :
+            <div>
+                {navigate("/Dashboard")}
             </div>
-        </div>
-        <div className={`bg-primary ${styles.flexStart}`}>
-            <div className={`${styles.boxWidth}`}>
-                <Hero />
-            </div>
-        </div>
-        <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
-            <div className={`${styles.boxWidth}`}>
-                {/* all section composant */}
-                <Stats />
-            </div>
-        </div>
-    </div>
-    :
-    <div>
-
-    </div>
+            } />
+        <Route path='/SignIn' element={
+                <div>loho</div>
+        } />
+    </Routes> 
     )
 }
 
