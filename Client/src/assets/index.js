@@ -5,6 +5,7 @@ import robot from "./robot.png"
 import discount from "./Discount.svg"
 import loginIcon from "./login-icon.svg"
 import checkCircle from "./check-circle.svg"
+import card from "./card.png"
 
 export {
     close,
@@ -13,5 +14,6 @@ export {
     robot,
     discount,
     loginIcon,
-    checkCircle
+    checkCircle,
+    card
 }

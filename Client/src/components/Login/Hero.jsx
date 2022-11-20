@@ -1,6 +1,8 @@
 import React from 'react'
-import styles from '../../style'
+import styles ,{layout} from '../../style'
 import LoginForm from './LoginForm'
+import { card } from '../../assets'
+
 const Hero = () => {
   return (
     <section className={`flex sm:flex-row flex-col ${styles.paddingY}`}>
@@ -13,10 +15,14 @@ const Hero = () => {
                     and offer to you maximum of security.<br />
                     Your Identy will be in confidential.
                 </p>
-                <div className='w-[470px] mt-10'>
+                <div className='w-[490px] mt-10'>
                     <LoginForm />
                 </div>
         </div>
+        <div className={`${layout.sectionImgReverse} flex-1.5 pt-16`}>
+              <img className='w-[90%] h-[90%] object-contain' src={card} alt="Card"/>
+        </div>
+        
     </section>
   )
 }

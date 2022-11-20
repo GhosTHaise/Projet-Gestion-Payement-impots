@@ -5,13 +5,13 @@ import Hero from "./Hero"
 //Login
 const index = () => {
   return (
-    <div className='w-full min-h-[100vh] overflow-hidden bg-primary'>
+    <div className='w-full min-h-[100vh] overflow-hidden bg-dark-blue'>
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
             <div className={`${styles.boxWidth}`}>
                        <Navbar />
             </div>
         </div>
-        <div className={`bg-primary ${styles.flexStart}`}>
+        <div className={` ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
                 <Hero />
             </div>
