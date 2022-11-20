@@ -11,7 +11,7 @@ const index = () => {
                        <Navbar />
             </div>
         </div>
-        <div className={` ${styles.flexStart}`}>
+        <div className={`${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
                 <Hero />
             </div>
