@@ -29,7 +29,7 @@ const Navbar = () => {
                  src={!Toggle ? menu : close} alt="menu" 
                  onClick={() => setToggle(!Toggle)}
                  />
-                 <div className={`${Toggle ? "flex" : "hidden"} flex-col p-6 bg-black-gradient absolute 
+                 <div className={`${Toggle ? "flex" : "hidden"} flex-col p-6 glass-effect z-[10] absolute 
                  top-20 right-0 mx-4 my-2 min-w-[180px] rounded-xl sidebar`}>
                       <ul className='list-none flex justify-end flex-col items-end flex-1'>  
                         {navlinks.map((navlink,index)=> (

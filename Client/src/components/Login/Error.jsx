@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../style'
 const Error = (props) =>
 (
-    <div className={`${styles.flexCenter} font-poppins font-normal h-[40px] text-error`}>
+    <div className={`${styles.flexCenter} text-[14px] font-poppins font-normal h-[30px] text-error`}>
         {props.children}
     </div>
 )

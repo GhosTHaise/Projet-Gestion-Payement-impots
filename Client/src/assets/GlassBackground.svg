@@ -1,0 +1,9 @@
+<svg id="GlassBackground" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="482" height="545" viewBox="0 0 482 545">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1.288" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#373737"/>
+      <stop offset="1" stop-color="#2e2e2e" stop-opacity="0.302"/>
+    </linearGradient>
+  </defs>
+  <rect id="GlassBackground-2" data-name="GlassBackground" width="482" height="545" rx="14" opacity="0.49" fill="url(#linear-gradient)"/>
+</svg>
