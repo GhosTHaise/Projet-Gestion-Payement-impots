@@ -2,9 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const InitializeViewEngine = require("./config/InitializeApp");
 const InitWebRoute = require("./router/web");
+const options = require("./config/OptionsApp");
 const fs = require("fs");
 const https = require("https");
 const cron = require("node-cron");
+const cors = require("cors");
 
 /* cron.schedule('* * * * *', () => {
     console.log('running a task every minute');
@@ -21,15 +23,11 @@ const cert = fs.readFileSync("./app/certs/CA/localhost/localhost.crt");
 
 const server = https.createServer({key : key ,cert : cert},app)
 //middleware
+app.use(cors(options.corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(session({
-    secret : process.env.SESSION_SECRET,
-    resave:false,
-    saveUnitilized:true,
-    cookie : {secure : false}
-}));
+app.use(session(options.sessionOptions));
 
 //view template
 InitializeViewEngine(app);

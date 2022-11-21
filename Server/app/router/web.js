@@ -16,8 +16,9 @@ const InitWebRoute = (app) => {
 
     //Home Route
         //Login&Registered
-        Router.post("/api/login",loginController.userRegistered);
+        Router.post("/api/registered",loginController.userRegistered);
         Router.post("/api/loginValidation",loginController.userLoginValidation);
+        Router.get("/api/loginSession",loginController.sessionUserInformations);
     //Home Route END
     //User Roure
         Router.get("/api/user/:id",userController.userInfo);

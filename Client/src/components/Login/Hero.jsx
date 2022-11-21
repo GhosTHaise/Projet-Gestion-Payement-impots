@@ -15,7 +15,7 @@ const Hero = () => {
                     and offer to you maximum of security.<br />
                     Your Identy will be in confidential.
                 </p>
-                <div className='w-[490px] mt-10'>
+                <div className='w-[475px] mt-10'>
                     <LoginForm />
                 </div>
         </div>

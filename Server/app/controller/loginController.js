@@ -1,14 +1,21 @@
 const {login} = require("../model/Schema");
+const sessionUserInformations = (req,res) => {
+    const data = req.session.user || "no data ...";
+    res.status(200).json({
+        data
+    });
+
+}
 
 const userLoginValidation = async (req,res) => {
-    console.log(req.session.user)
     const [data] = await login.find({
         $and : [
             {email : req.body.email},
             {password : req.body.password}
         ]
     });
-    req.session.user = {...data}
+    store = {...data}
+    req.session.user = {...store._doc}
     data == undefined ? 
     res.status(400).json({"message" : "Check your username or your password"}) :
     (
@@ -35,5 +42,6 @@ _schema.save()
 
 module.exports = {
     userRegistered,
-    userLoginValidation
+    userLoginValidation,
+    sessionUserInformations
 }

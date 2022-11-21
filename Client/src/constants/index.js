@@ -1,3 +1,6 @@
+export const serveur = {
+    url : "http://localhost:4000/api"
+}
 export const navlinks = [
     {
         id : "home",
