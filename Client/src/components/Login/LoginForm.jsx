@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import styles from '../../style'
 import InputField from './InputField'
 import Error from './Error'
@@ -13,12 +14,17 @@ const LoginForm = () => {
         axios.post(`${serveur.url}/loginValidation`,{
             email,
             password
-        }).then(({data}) => {
+        },{withCredentials : true}).then(({data}) => {
             console.log(data.message)
         }).catch(err => {
             console.log("erreur :",err)
         });
     }
+ useEffect(() => {
+    return async() => {
+        console.log((await axios.get("https://localhost:4430/api/loginSession",{withCredentials : true})))
+    };
+ }, []);
  return (
     <div className='flex flex-col w-full  glass-effect rounded-xl p-6'>
         <div className={`flex flex-1 justify-between items-center`}>

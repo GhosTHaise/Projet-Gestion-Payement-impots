@@ -1,9 +1,8 @@
+const store = require("../model/dbStore");
 const {login} = require("../model/Schema");
 const sessionUserInformations = (req,res) => {
     const data = req.session.user || "no data ...";
-    res.status(200).json({
-        data
-    });
+    res.send(req.session.user);
 
 }
 
@@ -14,8 +13,18 @@ const userLoginValidation = async (req,res) => {
             {password : req.body.password}
         ]
     });
-    store = {...data}
-    req.session.user = {...store._doc}
+    const store = {...data}
+    //req.session.user = {...store._doc}
+    req.session.user = {
+        doc : {...store._doc}
+    } //THIS SETS AN OBJECT - 'USER'
+    req.session.save(err => {
+        if(err){
+            console.log(err);
+        } else {
+            console.log(req.session.user);
+        }
+    }); //THIS SAVES THE SESSION.
     data == undefined ? 
     res.status(400).json({"message" : "Check your username or your password"}) :
     (
