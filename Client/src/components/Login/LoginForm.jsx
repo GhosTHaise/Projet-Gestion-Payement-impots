@@ -1,23 +1,40 @@
-import { useEffect } from 'react'
+import { useEffect ,useContext} from 'react'
 import styles from '../../style'
 import InputField from './InputField'
 import Error from './Error'
 import {checkCircle} from "../../assets"
 import { useState } from 'react'
 import { serveur } from '../../constants'
+import { toast } from 'react-toastify'
 import axios from "axios"
+import { DataContext } from '../../context'
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const {navigate} = useContext(DataContext);
     const performLogin = async () => {
         axios.post(`${serveur.url}/loginValidation`,{
             email,
             password
         },{withCredentials : true}).then(({data}) => {
             console.log(data.message)
+            toast.success(data.message,{
+                draggable : true,
+                className : "bg-primary",
+                autoClose : 1500,
+                theme : "light"
+            })
+            setTimeout(_=> {
+                navigate("/Dashboard")
+            },1500)
         }).catch(err => {
-            console.log("erreur :",err)
+            toast.error(err.response.data.message,{
+                draggable : true,
+                className : "bg-primary",
+                autoClose : 5000,
+                theme : "light"
+            })
         });
     }
  useEffect(() => {
@@ -48,7 +65,7 @@ const LoginForm = () => {
             <button onClick={performLogin} className='w-full text-[white] glass-effect rounded-full py-5 border-solid border-[#7a7a7a] border-[1px] font-poppins font-normal text-[18px] mt-3'>Sign In</button>
             <div className={`w-full ${styles.flexCenter} mt-4 mb-3`}>
                 <p className={`font-poppins text-dimWhite text-[15px] leading-[35px]`}>
-                    Don't have an account ? <span className='text-[white] cursor-pointer'>Create your account now</span>
+                    Don't have an account ? <span className='text-[white] cursor-pointer' onClick={() => navigate("/Registered")}>Create your account now</span>
                 </p>
             </div>
         </div>

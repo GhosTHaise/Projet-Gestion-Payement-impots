@@ -1,6 +1,6 @@
 import {useState,useContext} from 'react'
-import { Route,Routes, useNavigate } from 'react-router-dom';
-import {Home,Login} from "./components"
+import { Route,Routes} from 'react-router-dom';
+import {Home,Login,Registered} from "./components"
 import { DataContext } from './context';
 const App = () => { 
     const [User_session_data, setUser_session_data] = useState([]);
@@ -15,9 +15,8 @@ const App = () => {
                 {navigate("/Dashboard")}
             </div>
             } />
-        <Route path='/SignIn' element={
-                <Login />
-        } />
+        <Route path='/SignIn' element={ <Login />} />
+        <Route path='/Registered' element={<Registered />} />
     </Routes> 
     )
 }
