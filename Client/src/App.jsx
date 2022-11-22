@@ -1,6 +1,6 @@
 import {useState,useContext} from 'react'
 import { Route,Routes} from 'react-router-dom';
-import {Home,Login,Registered} from "./components"
+import {Home,Login,Register} from "./components"
 import { DataContext } from './context';
 const App = () => { 
     const [User_session_data, setUser_session_data] = useState([]);
@@ -16,7 +16,7 @@ const App = () => {
             </div>
             } />
         <Route path='/SignIn' element={ <Login />} />
-        <Route path='/Registered' element={<Registered />} />
+        <Route path='/SignUp' element={<Register />} />
     </Routes> 
     )
 }

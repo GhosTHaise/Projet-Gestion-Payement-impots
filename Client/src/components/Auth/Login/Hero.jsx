@@ -1,7 +1,7 @@
 import React from 'react'
-import styles ,{layout} from '../../style'
+import styles ,{layout} from '../../../style'
 import LoginForm from './LoginForm'
-import { card } from '../../assets'
+import { card } from '../../../assets'
 
 const Hero = () => {
   return (

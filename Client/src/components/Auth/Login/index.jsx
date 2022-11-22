@@ -1,6 +1,5 @@
-import React from 'react'
-import styles from '../../style'
-import Navbar from './Navbar'
+import styles from '../../../style'
+import Navbar from '../Navbar'
 import Hero from "./Hero"
 //Login
 const index = () => {

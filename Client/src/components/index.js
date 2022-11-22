@@ -1,10 +1,9 @@
 import Home from "./home"
 import Dashboard from "./Dashboard"
-import Login from "./Login"
-import Registered from "./Registered"
+import { Login,Register } from "./Auth"
 export  {
     Home,
     Login,
-    Registered,
+    Register,
     Dashboard
 }

@@ -1,13 +1,13 @@
 import { useEffect ,useContext} from 'react'
-import styles from '../../style'
-import InputField from './InputField'
+import styles from '../../../style'
+import InputField from '../InputField'
 import Error from './Error'
-import {checkCircle} from "../../assets"
+import {checkCircle} from "../../../assets"
 import { useState } from 'react'
-import { serveur } from '../../constants'
+import { serveur } from '../../../constants'
 import { toast } from 'react-toastify'
 import axios from "axios"
-import { DataContext } from '../../context'
+import { DataContext } from '../../../context'
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
