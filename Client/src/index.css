@@ -1,4 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Poppins";
+  src: url("http://localhost:4000/fonts/Poppins-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("http://localhost:4000/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("http://localhost:4000/fonts/Poppins-SemiBold.ttf");
+  font-weight: 600;
+}
+
 
 @tailwind base;
 @tailwind components;

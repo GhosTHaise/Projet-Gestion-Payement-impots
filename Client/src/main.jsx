@@ -6,11 +6,13 @@ import "react-toastify/dist/ReactToastify.css"
 import {ToastContainer} from "react-toastify"
 import {BrowserRouter} from "react-router-dom"
 import ContextProvider from './context'
+import { AnimatePresence } from 'framer-motion'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter >
       <ContextProvider>
-        <App />
+          <App />
         <ToastContainer className={'w-[auto]'} />
       </ContextProvider>  
     </BrowserRouter>

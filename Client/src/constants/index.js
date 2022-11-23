@@ -33,3 +33,54 @@ export const stats = [
         value : "230M+"
     }
 ]
+
+export const animation = {
+    fadeInOut : {
+        offscreen : {opacity : 0},
+        onscreen : {
+            opacity: 1,
+            transition: {
+                duration : 0.75,
+                ease : "easeOut"
+            }
+        },
+        exitscreen : {opacity : 0}
+    },
+    sladeInOut : {
+        offscreen : {y: "100%"},
+        onscreen : {
+            y: "0%",
+            transition: {
+                duration : 1.75,
+                ease : "easeOut"
+            }
+        },
+        exitscreen : {opacity : 1}
+    },
+    slideTopBotom : {
+        offscreen :{y:-150,opacity:0},
+        onscreen:{
+          y:0,
+          opacity:1,
+          transition: {
+            delay : 0.45,
+            type:"spring",
+            bounce:0.5,
+            duration:0.75,
+            ease : "easeOut"
+          }
+        }
+    },
+    zoomEffect : {
+        offscreen : {opacity:0,scale : 0.75},
+        onscreen : {
+          opacity:1,
+          scale : 1,
+          transition : {
+            delay : 0.35,
+            duration:0.25,
+            ease : "easeOut"
+          }
+        }
+      }
+}

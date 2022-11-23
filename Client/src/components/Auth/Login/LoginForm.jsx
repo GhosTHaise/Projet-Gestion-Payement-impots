@@ -64,8 +64,8 @@ const LoginForm = () => {
             <div className='w-full h-[2px] bg-[#707070]  opacity-40 my-4'/>
             <button onClick={performLogin} className='w-full text-[white] glass-effect rounded-full py-5 border-solid border-[#7a7a7a] border-[1px] font-poppins font-normal text-[18px] mt-3'>Sign In</button>
             <div className={`w-full ${styles.flexCenter} mt-4 mb-3`}>
-                <p className={`font-poppins text-dimWhite text-[15px] leading-[35px]`}>
-                    Don't have an account ? <span className='text-[white] cursor-pointer' onClick={() => navigate("/Registered")}>Create your account now</span>
+                <p className={`font-poppins text-dimWhite text-[14px] leading-[35px]`}>
+                    Don't have an account ? <span className='text-[white] cursor-pointer' onClick={() => navigate("/SignUp")}>Create your account now</span>
                 </p>
             </div>
         </div>

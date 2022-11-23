@@ -2,9 +2,17 @@ import Navbar from "./Navbar"
 import Hero from "./Hero"
 import Stats from "./Stats"
 import styles from '../../style'
+import {motion as m} from "framer-motion"
+import {animation} from "../../constants"
 //Home
 const index = ({navigate}) => (
-    <div className={` w-full min-h-[100vh] overflow-hidden bg-primary`}>
+    <m.div
+    initial={{x : "-100%"}}
+    animate={{x : "0%"}}
+    transition={{duration : 0.75,ease:"easeOut"}}
+    exit={{opacity : 1}}
+    variants={animation.sladeInOut}
+    className={`absolute top-0 w-full min-h-[100vh] overflow-hidden bg-primary`}>
                 <div className={`${styles.paddingX} ${styles.flexCenter}`}>
                     <div className={`${styles.boxWidth}`}>
                         <Navbar />
@@ -21,7 +29,7 @@ const index = ({navigate}) => (
                         <Stats />
                     </div>
                 </div>
-    </div>
+    </m.div>
   )
 
 
