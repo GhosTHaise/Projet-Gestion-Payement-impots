@@ -6,6 +6,7 @@ import discount from "./Discount.svg"
 import loginIcon from "./login-icon.svg"
 import checkCircle from "./check-circle.svg"
 import card from "./card.png"
+import bill from "./bill.png"
 
 export {
     close,
@@ -15,5 +16,6 @@ export {
     discount,
     loginIcon,
     checkCircle,
-    card
+    card,
+    bill
 }
