@@ -17,6 +17,9 @@ const App = () => {
             }else{
                 
             } */
+            if(response.message){
+                return ;
+            }
             sessionTKit.login(response);
         }
         fecthData("https://localhost:4430/api/loginSession")

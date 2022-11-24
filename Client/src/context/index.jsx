@@ -11,6 +11,7 @@ const fecthDataCall = async({api}) => {
             return response.data;
     }).catch(err => {
         console.log(`Unable to fetch : ${api} | ${err}`);
+        return new Array(err.response.data);
     })
     return apireturn;
 }
