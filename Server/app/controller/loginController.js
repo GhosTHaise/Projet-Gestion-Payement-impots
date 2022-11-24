@@ -1,9 +1,11 @@
 const store = require("../model/dbStore");
 const {login} = require("../model/Schema");
+
 const sessionUserInformations = (req,res) => {
     const data = req.session.user || "no data ...";
-    res.send(req.session.user);
-
+    const {_id,password,...sharing} = data.doc;
+    console.log(sharing)
+    res.status(200).json(new Array(sharing));
 }
 
 const userLoginValidation = async (req,res) => {

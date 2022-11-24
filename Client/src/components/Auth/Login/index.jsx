@@ -11,7 +11,7 @@ const index = () => {
     animate={{y : "0%"}}
     transition={{duration : 0.75,ease:"easeOut"}}
     exit={{opacity : 1}}
-     className='absolute top-0 left-0 w-full min-h-[100vh] overflow-hidden bg-dark-blue'>
+    className='absolute top-0 left-0 w-full min-h-[100vh] overflow-hidden bg-dark-blue'>
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
             <div className={`${styles.boxWidth}`}>
                        <Navbar />

@@ -36,18 +36,23 @@ export const stats = [
 
 export const animation = {
     fadeInOut : {
-        offscreen : {opacity : 0},
-        onscreen : {
+        hidden : {opacity : 0},
+        show : {
             opacity: 1,
             transition: {
-                duration : 0.75,
-                ease : "easeOut"
+                delayChildren : 1.5,
+                staggerChildren : 0.2,
+                duration : 1.5
             }
-        },
-        exitscreen : {opacity : 0}
+        }
     },
+    itemFadeInOut : {
+        hidden : {y : "100%"},
+        show : { y : "0%" , transition : {duration : 0.5}}
+    }
+    ,
     sladeInOut : {
-        offscreen : {y: "100%"},
+        offscreen : {y: "-100%"},
         onscreen : {
             y: "0%",
             transition: {
@@ -77,7 +82,7 @@ export const animation = {
           opacity:1,
           scale : 1,
           transition : {
-            delay : 0.35,
+            delay : 0.55,
             duration:0.25,
             ease : "easeOut"
           }

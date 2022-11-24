@@ -8,6 +8,8 @@ import { serveur } from '../../../constants'
 import { toast } from 'react-toastify'
 import axios from "axios"
 import { DataContext } from '../../../context'
+import {motion as m} from "framer-motion"
+import { animation } from '../../../constants'
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
@@ -37,17 +39,16 @@ const LoginForm = () => {
             })
         });
     }
- useEffect(() => {
-    return async() => {
-        console.log((await axios.get("https://localhost:4430/api/loginSession",{withCredentials : true})))
-    };
- }, []);
  return (
     <div className='flex flex-col w-full  glass-effect rounded-xl p-6'>
         <div className={`flex flex-1 justify-between items-center`}>
             <h4 className='text-[24px] font-poppins leading-[50px] font-semibold text-[white]'>Login</h4>
         </div>
-        <div className={`${styles.flexStart} flex-col mt-4`}>
+        <m.div
+         initial="hidden"
+         animate="show"
+         variants={animation.fadeInOut}
+         className={`${styles.flexStart} flex-col mt-4`}>
             <label className={`${styles.paragraph}`}>Email</label>
             <InputField stateChange={setEmail} type="text" placeholder="Example@gmail.com"/>
             <Error>
@@ -68,7 +69,7 @@ const LoginForm = () => {
                     Don't have an account ? <span className='text-[white] cursor-pointer' onClick={() => navigate("/SignUp")}>Create your account now</span>
                 </p>
             </div>
-        </div>
+        </m.div>
     </div>
   )
  }

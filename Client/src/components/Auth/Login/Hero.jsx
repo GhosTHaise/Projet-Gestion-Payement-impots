@@ -2,6 +2,8 @@ import React from 'react'
 import styles ,{layout} from '../../../style'
 import LoginForm from './LoginForm'
 import { card } from '../../../assets'
+import {motion as m} from "framer-motion"
+import {animation} from "../../../constants"
 
 const Hero = () => {
   return (
@@ -10,11 +12,15 @@ const Hero = () => {
                 <h1 className='font-poppins font-semibold text-white ss:text-[52px] text-[42px] ss:leading-[75px] leading-[50px]'>
                     Welcome
                 </h1>
-                <p className={`max-w-[470px] mt-4 ${styles.paragraph}`}>
+                <m.p
+                initial="hidden"
+                animate="show"
+                variants={animation.fadeInOut}
+                className={`max-w-[470px] mt-4 ${styles.paragraph}`}>
                     We use hashcrypt to provide the efficiency of the computation
                     and offer to you maximum of security.<br />
                     Your Identy will be in confidential.
-                </p>
+                </m.p>
                 <div className='w-[475px] mt-10'>
                     <LoginForm />
                 </div>

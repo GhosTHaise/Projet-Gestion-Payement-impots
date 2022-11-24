@@ -1,10 +1,18 @@
 import styles from "../../../style"
 import Navbar from "../Navbar"
 import Hero from "./Hero"
-
+import {motion as m} from "framer-motion"
 const index = () => {
   return (
-    <div className='w-full min-h-[100vh] overflow-hidden bg-dark-blue'>
+    <m.div
+    initial={{x:"100%"}}
+    animate={{x:"0%"}}
+    transition={{
+        duration: 0.75,
+        ease : "easeOut"
+    }}
+    exit={{opacity : 1}}
+    className='fixed top-0 w-full min-h-[100vh] overflow-hidden bg-dark-blue'>
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
             <div className={`${styles.boxWidth}`}>
                        <Navbar />
@@ -15,7 +23,7 @@ const index = () => {
                 <Hero />
             </div>
         </div>
-    </div>
+    </m.div>
   )
 }
 

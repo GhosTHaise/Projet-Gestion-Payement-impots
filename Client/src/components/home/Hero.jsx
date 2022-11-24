@@ -33,12 +33,16 @@ const Hero = () => {
               <h1 className="font-poppins font-semibold text-white ss:text-[68px] text-[52px] ss:leading-[100px] leading-[75px]">
                   Payment Method.
               </h1>
-              <p className={`${styles.paragraph} max-w-[470px] mt-4`}>
+              <motion.p
+              initial="hidden"
+              animate="show"
+              variants={animation.fadeInOut}
+              className={`${styles.paragraph} max-w-[470px] mt-4`}>
                   Our teams of experts uses a methodology to identify 
                   and secure all your payments 
                   most likely to fit all you need.
                   We examine and accept all way of payment.
-              </p>
+              </motion.p>
         </div>
         <div className={`${styles.flexCenter} flex-[.75] flex md:my-0 my-10 relative`}>
           <img className="h-[100%]  w-[100%] relative z-[5]" src={robot} alt="billing" />
