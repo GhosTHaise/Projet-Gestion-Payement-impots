@@ -23,7 +23,6 @@ const ContextProvider = (props) => {
 
     const login = async (data) => {
         setUser(data);
-        navigate("/Dashboard")
     }
 
     const logout = async() => {

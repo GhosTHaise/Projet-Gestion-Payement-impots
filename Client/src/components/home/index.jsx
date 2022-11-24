@@ -5,7 +5,7 @@ import styles from '../../style'
 import {motion as m} from "framer-motion"
 import {animation} from "../../constants"
 //Home
-const index = ({navigate}) => (
+const index = () => (
     <m.div
     initial={{x : "-100%"}}
     animate={{x : "0%"}}

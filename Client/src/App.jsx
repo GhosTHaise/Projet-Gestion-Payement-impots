@@ -3,7 +3,7 @@ import { Route,Routes} from 'react-router-dom';
 import {Home,Login,Register,Dashboard} from "./components"
 import { DataContext } from './context';
 import { AnimatePresence } from 'framer-motion';
-import axios from "axios";
+import { ProtectedLayout,HomeLayout } from './utils/Auth';
 
 const App = () => { 
     const {sessionTKit,fecthDataCall,navigate,location} = useContext(DataContext);
@@ -29,10 +29,17 @@ const App = () => {
     return(
     <AnimatePresence initial={false} >
         <Routes location={location} key={location.pathname}>
-            <Route path='/' element={<Home navigate={navigate} />}/>
-            <Route path='/Dashboard' element={<Dashboard status={sessionTKit.user?.status} />} />
-            <Route path='/SignIn' element={ <Login />} />
-            <Route path='/SignUp' element={<Register />} />
+            {/* Not Logged */}
+            <Route element={<HomeLayout />}>
+                <Route path='/' element={<Home />}/>
+                <Route path='/SignIn' element={ <Login />} />
+                <Route path='/SignUp' element={<Register />} />
+            </Route>
+                    
+            {/* Logged */}
+            <Route element={<ProtectedLayout/>}>
+                <Route path='/Dashboard' element={<Dashboard status={sessionTKit.user?.status} />} />
+            </Route>
         </Routes> 
     </AnimatePresence>
     )
