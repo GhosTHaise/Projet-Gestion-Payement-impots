@@ -12,18 +12,17 @@ const App = () => {
     useEffect(()=>{
         const fecthData = async (api) => {
             const [response] =  await fecthDataCall({api : api});
-            if(sessionTKit.user != null){
-                sessionTKit.logout()
+            /* if(sessionTKit.user != null){
                 return navigate("/Dashboard")
             }else{
-                sessionTKit.login(response);
-            }
-            
+                
+            } */
+            sessionTKit.login(response);
         }
         fecthData("https://localhost:4430/api/loginSession")
     },[])
 
-    {console.log("Session :",sessionTKit.user);}
+    //{console.log("Session :",sessionTKit.user);}
     return(
     <AnimatePresence initial={false} >
         <Routes location={location} key={location.pathname}>
