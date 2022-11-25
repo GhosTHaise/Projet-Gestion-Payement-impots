@@ -18,6 +18,8 @@ const Schema_user = mongoose.Schema({
     lastname : {type : String,required : true},
     email : {type : String,required : true},
     tel : {type : String,required : true,minLength : 13},
+    city: {type : String,required : true,default : "Antananarivo"},
+    zipCode : {type : String,requied : true},
     profil : {type : String,required : true},
     password : {type : String,required : true},
     status : {type : String , default : "client/normal"},
