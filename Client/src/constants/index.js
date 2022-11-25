@@ -1,3 +1,5 @@
+import { First , Second , Third } from "../components/Auth/Register/FragmentForm"
+
 export const serveur = {
     url : "https://localhost:4430/api"
 }
@@ -89,3 +91,21 @@ export const animation = {
         }
       }
 }
+
+export const registeredRoutes = [
+    {
+        id : 'first',
+        route : "/",
+        element : First
+    },
+    {
+        id : "second",
+        route : "/second",
+        element : Second
+    },
+    {
+        id : "third",
+        route : "/third",
+        element : Third
+    }
+]

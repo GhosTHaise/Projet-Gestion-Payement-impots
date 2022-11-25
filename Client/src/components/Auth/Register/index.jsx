@@ -12,10 +12,10 @@ const index = () => {
         ease : "easeOut"
     }}
     exit={{opacity : 1}}
-    className='fixed top-0 w-full min-h-[100vh] overflow-hidden bg-dark-blue'>
+    className='absolute left-0 top-0 w-full min-h-[100vh] bg-dark-blue'>
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
             <div className={`${styles.boxWidth}`}>
-                       <Navbar />
+                <Navbar />
             </div>
         </div>
         <div className={`${styles.flexStart}`}>

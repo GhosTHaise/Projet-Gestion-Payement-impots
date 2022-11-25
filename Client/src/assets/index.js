@@ -7,7 +7,9 @@ import loginIcon from "./login-icon.svg"
 import checkCircle from "./check-circle.svg"
 import card from "./card.png"
 import bill from "./bill.png"
-
+import circle from "./circle.svg"
+import circleActive from "./circleActive.svg"
+import angleRight from "./angle-right.svg"
 export {
     close,
     menu,
@@ -17,5 +19,8 @@ export {
     loginIcon,
     checkCircle,
     card,
-    bill
+    bill,
+    circle,
+    circleActive,
+    angleRight
 }
