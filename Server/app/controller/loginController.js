@@ -53,7 +53,9 @@ _schema.save()
             message : "User has been registered !"
         });
     }).catch( e => {
-            console.log("Error : ",e);
+            res.status(503).json({
+                message : "Please complete all fields !"
+            })
         });
 }
 

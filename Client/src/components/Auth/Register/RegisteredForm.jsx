@@ -1,10 +1,43 @@
-import {useState} from 'react'
-import { Routes,Route } from 'react-router-dom'
+import {useState,useContext} from 'react'
 import Down from "./Down"
-import { registeredRoutes } from '../../../constants'
+import { DataContext } from '../../../context'
+import { registeredRoutes,serveur } from '../../../constants'
 import { AnimatePresence } from 'framer-motion'
+import { toast } from 'react-toastify'
+import axios from 'axios'
 const RegisteredForm = () => {
   const [actualLink, setactualLink] = useState(0);
+  const {registeredState,navigate} = useContext(DataContext);
+
+  const registerButton = () => {
+      let [first,second,third] = registeredState;
+      axios.post(`${serveur.url}/registered`,
+        {
+          ...first.getters,
+          ...second.getters,
+          ...third.getters
+        }
+      ).then((response)=> {
+            
+            Object.entries({...first.setters,...second.setters,...third.setters}).forEach(entry => {
+                entry[1]("");
+            })
+            
+            toast.success(response.data.message,{
+            draggable : true,
+            className : "bg-primary",
+            autoClose : 1500,
+            theme : "light"
+        });
+        setTimeout(() => {
+            navigate("/SignIn");
+        },1500);
+      }).catch(err=>{
+        console.log(err);
+          toast.error(err.response.data.message);
+      })
+  }
+
   return (
     <div className="flex flex-col w-full  glass-effect rounded-xl p-6 overflow-hidden">
             <h4 className='text-[24px] font-poppins leading-[50px] font-semibold text-[white]'>Create Your Account</h4>
@@ -12,13 +45,13 @@ const RegisteredForm = () => {
                     <AnimatePresence initial={false} >
                       
                         {registeredRoutes.map((registeredRoute,index)=> (
-                          (index) == actualLink && <registeredRoute.element key={registeredRoute.id} />
+                          (index) == actualLink && <registeredRoute.element  states={registeredState[index]} key={registeredRoute.id} />
                         ))}
                 
                     </AnimatePresence>
                 </div>      
             <div className='w-full h-[2px] bg-[#707070]  opacity-75 my-6'/>
-            <Down registeredRoutes={registeredRoutes.length} setactualLink={setactualLink} actualLink={actualLink} />
+            <Down registerButton={registerButton} registeredRoutes={registeredRoutes.length} setactualLink={setactualLink} actualLink={actualLink} />
     </div>
   )
 }

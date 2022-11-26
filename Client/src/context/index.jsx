@@ -1,4 +1,4 @@
-import  {createContext,useMemo} from "react" 
+import  {createContext,useMemo,useState} from "react" 
 import { useLocation, useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../utils/useLocalStorage";
 import axios from "axios";
@@ -20,7 +20,20 @@ const ContextProvider = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [user,setUser] = useLocalStorage("user",null);
+    //Register Info
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [address, setAddress] = useState("");
 
+    const [telephone, setTelephone] = useState("");
+    const [country, setCountry] = useState("");
+    const [city, setCity] = useState("");
+    const [zipcode, setZipcode] = useState("");
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    //End
     const login = async (data) => {
         setUser(data);
     }
@@ -29,7 +42,46 @@ const ContextProvider = (props) => {
         setUser(null);
         navigate("/");
     }
-
+    const registeredState = [
+        {
+            setters : {
+                setFirstname,
+                setLastname,
+                setAddress
+            },
+            getters : {
+                firstname,
+                lastname,
+                address
+            }
+        },
+        {
+            setters : {
+                setTelephone,
+                setCountry,
+                setCity,
+                setZipcode
+            },
+            getters : {
+                telephone,
+                country,
+                city,
+                zipcode
+            }
+        },
+        {
+            setters : {
+                setEmail,
+                setPassword,
+                setConfirmPassword
+            },
+            getters : {
+                email,
+                password,
+                confirmPassword
+            }
+        }
+    ]
     const sessionTKit = useMemo(
         () => ({
             user,
@@ -45,7 +97,8 @@ const ContextProvider = (props) => {
                 sessionTKit,
                 navigate,
                 location,
-                fecthDataCall
+                fecthDataCall,
+                registeredState
             }
         }>
             {props.children}

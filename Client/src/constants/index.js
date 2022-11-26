@@ -1,4 +1,6 @@
 import { First , Second , Third } from "../components/Auth/Register/FragmentForm"
+import { useState } from "react"
+
 
 export const serveur = {
     url : "https://localhost:4430/api"
@@ -96,16 +98,19 @@ export const registeredRoutes = [
     {
         id : 'first',
         route : "/",
-        element : First
+        element : First,
+        
     },
     {
         id : "second",
         route : "/second",
-        element : Second
+        element : Second,
+        
     },
     {
         id : "third",
         route : "/third",
-        element : Third
+        element : Third,
+        
     }
 ]
