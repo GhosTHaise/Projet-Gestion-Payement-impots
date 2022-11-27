@@ -4,9 +4,7 @@ const {login} = require("../model/Schema");
 const sessionUserInformations = (req,res) => {
     const data = req.session.user || "no data ...";
     if(data != "no data ..."){
-        const {_id,password,...sharing} = data.doc;
-        console.log(sharing);
-        res.status(200).json(new Array(sharing));
+        res.status(200).json(new Array(data.doc));
     }else{
         res.status(404).json({
             message : "No Active session"
@@ -22,9 +20,10 @@ const userLoginValidation = async (req,res) => {
         ]
     });
     const store = {...data}
+    const {_id,password,...sharing} = store._doc;
     //req.session.user = {...store._doc}
     req.session.user = {
-        doc : {...store._doc}
+        doc : {...sharing}
     } //THIS SETS AN OBJECT - 'USER'
     req.session.save(err => {
         if(err){
@@ -36,7 +35,11 @@ const userLoginValidation = async (req,res) => {
     data == undefined ? 
     res.status(400).json({"message" : "Check your username or your password"}) :
     (
-        res.status(200).json({"message" : "You are logged successfully"})
+        res.status(200).json({
+            "message" : "You are logged successfully",
+            "session": {...sharing}
+        
+        })
     );
     
 }

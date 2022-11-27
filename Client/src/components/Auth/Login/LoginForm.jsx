@@ -14,21 +14,21 @@ import { animation } from '../../../constants'
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const {navigate} = useContext(DataContext);
+    const {navigate,sessionTKit} = useContext(DataContext);
     const performLogin = async () => {
         axios.post(`${serveur.url}/loginValidation`,{
             email,
             password
         },{withCredentials : true}).then(({data}) => {
-            console.log(data.message)
             toast.success(data.message,{
                 draggable : true,
                 className : "bg-primary",
                 autoClose : 1500,
                 theme : "light"
-            })
+            });
+
             setTimeout(_=> {
-                navigate("/Dashboard")
+                sessionTKit.login(data.session);
             },1500)
         }).catch(err => {
             toast.error(err.response.data.message,{
