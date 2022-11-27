@@ -6,10 +6,13 @@ import discount from "./Discount.svg"
 import loginIcon from "./login-icon.svg"
 import checkCircle from "./check-circle.svg"
 import card from "./card.png"
+import bell from "./bell.svg"
 import bill from "./bill.png"
 import circle from "./circle.svg"
+import power from "./power-off.svg"
 import circleActive from "./circleActive.svg"
 import angleRight from "./angle-right.svg"
+import user from "./userwhite.png"
 export {
     close,
     menu,
@@ -22,5 +25,8 @@ export {
     bill,
     circle,
     circleActive,
-    angleRight
+    angleRight,
+    bell,
+    power,
+    user
 }
