@@ -2,7 +2,7 @@ import {useState,useContext} from 'react'
 import Down from "./Down"
 import { DataContext } from '../../../context'
 import { registeredRoutes,serveur } from '../../../constants'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence,motion as m } from 'framer-motion'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 const RegisteredForm = () => {
@@ -39,7 +39,11 @@ const RegisteredForm = () => {
   }
 
   return (
-    <div className="flex flex-col w-full  glass-effect rounded-xl p-6 overflow-hidden">
+    <m.div 
+    initial={{opacity: 0,x : 100}}
+    animate={{opacity : 1,x : 0}}
+    transition={{duration : .75,delay : .30}}
+    className="flex flex-col w-full  glass-effect rounded-xl p-6 overflow-hidden">
             <h4 className='text-[24px] font-poppins leading-[50px] font-semibold text-[white]'>Create Your Account</h4>
               <div className='relative h-[333px]'>
                     <AnimatePresence initial={false} >
@@ -52,7 +56,7 @@ const RegisteredForm = () => {
                 </div>      
             <div className='w-full h-[2px] bg-[#707070]  opacity-75 my-6'/>
             <Down registerButton={registerButton} registeredRoutes={registeredRoutes.length} setactualLink={setactualLink} actualLink={actualLink} />
-    </div>
+    </m.div>
   )
 }
 

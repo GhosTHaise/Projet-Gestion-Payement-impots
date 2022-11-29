@@ -40,7 +40,11 @@ const LoginForm = () => {
         });
     }
  return (
-    <div className='flex flex-col w-full  glass-effect rounded-xl p-6'>
+    <m.div
+    initial={{opacity : 0,y : -100}}
+    animate={{opacity : 1,y : 0}}
+    transition={{delay : .35,duration : .55,ease : "easeOut"}}
+    className='flex flex-col w-full  glass-effect rounded-xl p-6'>
         <div className={`flex flex-1 justify-between items-center`}>
             <h4 className='text-[24px] font-poppins leading-[50px] font-semibold text-[white]'>Login</h4>
         </div>
@@ -70,7 +74,7 @@ const LoginForm = () => {
                 </p>
             </div>
         </m.div>
-    </div>
+    </m.div>
   )
  }
 export default LoginForm
