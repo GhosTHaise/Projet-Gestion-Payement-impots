@@ -2,11 +2,19 @@
 const {login} = require("../model/Schema");
 
 const userInfo = async(req,res) => {
-    const data = await login.find({_id : req.params.id});
+    const data = await login.findOne({_id : req.params.id});
     data?.length != 1 ? res.status(400).json({
-        error : "Aucun donne ne corespond a cet id !"
+        error : "No account match with this id !"
     }) : res.status(200).json(data);
     console.log(req.session.user)
+}
+
+const allUserinfo = async(req,res) => {
+    const data =  await login.find({
+        _id : { $ne : req.body.id}
+    });
+    data?.length > 0 ? res.status(200).json(data) 
+    : res.status(200).json({"message" : "No account registered"})
 }
 
 const userInfoUpdate = async(req,res) => {
@@ -35,7 +43,10 @@ const userInfoDelete = async (req,res) => {
     })
 }
 
+
 module.exports = {
     userInfo,
-    userInfoUpdate
+    userInfoUpdate,
+    userInfoDelete,
+    allUserinfo
 }

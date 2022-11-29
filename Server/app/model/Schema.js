@@ -32,7 +32,7 @@ const Schema_impots = mongoose.Schema({
     id_proprio  : { type  : String, required : true},
     Somme : { type : Number, required : true},
     date_payement : {type : String, required : true},
-    facture : { type : String, requied : true}
+    facture : { type : String, required : true}
 });
 
 module.exports = {
