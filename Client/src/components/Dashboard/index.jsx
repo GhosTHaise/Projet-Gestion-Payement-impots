@@ -18,7 +18,6 @@ const Index = () => {
                               espace Admin
                             </h1>
                     </AdminLayout>
-                    sdfsdfsdf
               </div>
         </div>
     </m.div>
