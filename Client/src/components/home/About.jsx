@@ -10,7 +10,7 @@ const About = () => {
         </div>
         <div className={layout.sectionInfo}>
             <p className={` border-l-2 border-dimWhite font-poppins font-normal text-dimWhite text-[14px] leading-[17px] px-2 mb-3`}>What is E-Tax ?</p>
-            <h2 className={styles.heading2}>Easily control your <br className="sm:block hidden" /> billing & invoicing.</h2>
+            <h2 className={styles.heading2}>Easily pay your <br className="sm:block hidden" /> taxes & control it.</h2>
             <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
               Unde, quidem vel. Sit dignissimos optio voluptates, 
