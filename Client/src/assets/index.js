@@ -13,6 +13,8 @@ import power from "./power-off.svg"
 import circleActive from "./circleActive.svg"
 import angleRight from "./angle-right.svg"
 import user from "./userwhite.png"
+import animated from "./animated.svg"
+
 export {
     close,
     menu,
@@ -28,5 +30,6 @@ export {
     angleRight,
     bell,
     power,
-    user
+    user,
+    animated
 }

@@ -1,12 +1,12 @@
-import { useContext } from "react"
+import { Fragment, useContext } from "react"
 import { DataContext } from "../../context"
 const AdminLayout = ({children}) => {
     const {sessionTKit} = useContext(DataContext);
     if(sessionTKit.user?.status == "Admin"){
         return(
-            <div>
+            <Fragment>
                 {children}
-            </div>
+            </Fragment>
         )
     }
 }

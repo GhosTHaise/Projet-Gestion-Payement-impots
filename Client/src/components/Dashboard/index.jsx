@@ -3,7 +3,7 @@ import Client from "./Client"
 import Admin from "./Admin"
 import Navbar from "./Navbar"
 import {motion as m } from "framer-motion"
-import AdminLayout from "../../utils/Auth/AdminLayout"
+import{AdminLayout,ClientLayout} from "../../utils/Auth"
 //Dashboard
 const Index = () => {
   return (
@@ -14,10 +14,11 @@ const Index = () => {
               </div>
               <div className={`${styles.boxWidth} `}>
                     <AdminLayout>
-                            <h1 className="">
-                              espace Admin
-                            </h1>
+                          <Admin />
                     </AdminLayout>
+                    <ClientLayout>
+                          <Client />
+                    </ClientLayout>
               </div>
         </div>
     </m.div>

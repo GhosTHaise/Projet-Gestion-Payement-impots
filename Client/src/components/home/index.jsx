@@ -2,6 +2,7 @@ import Navbar from "./Navbar"
 import Hero from "./Hero"
 import Stats from "./Stats"
 import styles from '../../style'
+import About from "./About"
 import {motion as m} from "framer-motion"
 import {animation} from "../../constants"
 //Home
@@ -27,6 +28,7 @@ const index = () => (
                     <div className={`${styles.boxWidth}`}>
                         {/* all section composant */}
                         <Stats />
+                        <About />
                     </div>
                 </div>
     </m.div>
