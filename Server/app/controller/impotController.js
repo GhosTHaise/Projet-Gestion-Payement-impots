@@ -24,7 +24,30 @@ const addImpot = async(req,res) => {
     const new_impots = new impots({
         ...req.body
     });
-    const old_impot = await login.find()
+    const account = login.findById(
+            req.params.id,async (err,success)=>{
+                if(!err){
+                    if(!success){
+                        res.status(200).json({
+                            "message" : "This account doesn't exist ."
+                        })
+                    }else{
+                        result.impots.push(new_impots);
+                        result.save((saveErr,success) => {
+                            if(saveErr){
+                                res.status(200).json({
+                                    "message" : "Unable to save this tax"
+                                })
+                            }else{
+                                res.status(200).json({
+                                    "message" : "This tax has been successfully registered"
+                                })
+                            }
+                        });
+                    }
+                }
+            }
+        )
 }
 
 module.exports = {

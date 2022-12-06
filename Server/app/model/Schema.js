@@ -26,10 +26,10 @@ const Schema_user = mongoose.Schema({
     password : {type : String,required : true},
     status : {type : String , default : "client/normal"},
     habilitations : [Schema_habilitation],
+    impots : [Schema_impots]
 });
 
 const Schema_impots = mongoose.Schema({
-    id_proprio  : { type  : String, required : true},
     Somme : { type : Number, required : true},
     date_payement : {type : String, required : true},
     facture : { type : String, required : true}
