@@ -2,6 +2,8 @@ const express = require("express")
 const Router = express.Router();
 
 const {loginController,userController} = require("../controller");
+const {loginRoutes,impotRoutes,userRoutes} = require("./routes");
+
 const InitWebRoute = (app) => {
     //https
     app.use((req,res,next)=>{
@@ -15,32 +17,19 @@ const InitWebRoute = (app) => {
     });
 
     //Home Route
-        //Login&Registered
-        Router.post("/api/registered",loginController.userRegistered);
-        Router.post("/api/loginValidation",loginController.userLoginValidation);
-        Router.get("/api/loginSession",loginController.sessionUserInformations);
+        loginRoutes(Router);
     //Home Route END
-    //User Roure
-        Router.get("/api/user/:id",userController.userInfo);
-        Router.post("/api/user/:id",userController.userInfoUpdate);
-
-        Router.get('/api', (req,res,next) => {
-            req.session.user = {
-                uuid: '12234-2345-2323423'
-            } //THIS SETS AN OBJECT - 'USER'
-            req.session.save(err => {
-                if(err){
-                    console.log(err);
-                } else {
-                    res.send(req.session.user) // YOU WILL GET THE UUID IN A JSON FORMAT
-                }
-            }); //THIS SAVES THE SESSION.
-        })
+    //User Route
+        userRoutes(Router);
     //User Route END
+    //Impot Route
+        impotRoutes(Router);
+    //Impot Route END
+    
     app.use(Router);
 
 
-    //Middlezare en cas d'erreur , maintenir en bas des routes principaux
+    //Middleware en cas d'erreur , maintenir en bas des routes principaux
     app.use((req,res)=>{
         res.send({
             error : "Your request is not valid !"

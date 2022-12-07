@@ -20,7 +20,6 @@ const LoginForm = () => {
 
 
     const checkEmail = () => {
-        
     }
     const checkPassword = () => {
         !(password?.length >= 8) ? 
@@ -31,8 +30,8 @@ const LoginForm = () => {
     const performLogin = async () => {
         checkPassword() && checkEmail();
         //conditinnal post request
-        emailStatus && 
-        passwordStatus && (
+        !emailStatus && 
+        !passwordStatus && (
             axios.post(`${serveur.url}/loginValidation`,{
                 email,
                 password

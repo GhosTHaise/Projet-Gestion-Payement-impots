@@ -54,5 +54,6 @@ const addImpot = async(req,res) => {
 }
 
 module.exports = {
-    impotByUser
+    impotByUser,
+    addImpot
 }
