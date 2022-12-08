@@ -13,6 +13,12 @@ const Schema_habilitation = mongoose.Schema({
     code_postal : {type : Number , required : true}
 });
 
+const Schema_impots = mongoose.Schema({
+    Somme : { type : Number, required : true},
+    date_payement : {type : String, required : true},
+    facture : { type : String, required : true}
+});
+
 const Schema_user = mongoose.Schema({
     firstname : {type : String,required : true},
     lastname : {type : String,required : true},
@@ -29,11 +35,7 @@ const Schema_user = mongoose.Schema({
     impots : [Schema_impots]
 });
 
-const Schema_impots = mongoose.Schema({
-    Somme : { type : Number, required : true},
-    date_payement : {type : String, required : true},
-    facture : { type : String, required : true}
-});
+
 
 module.exports = {
     login : mongoose.model('login',Schema_user),

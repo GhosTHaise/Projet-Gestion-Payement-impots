@@ -1,4 +1,4 @@
-const {impots,login} = require("../model/Schema");
+const {login} = require("../model/Schema");
 
 const defaultAnswer = (...params) => {
     const httpResponse = params.res?.status(200);
@@ -14,17 +14,18 @@ const defaultAnswer = (...params) => {
 }
 
 const impotByUser = (req,res) => {
-    const list_impots = impots.find({
+    const list_impots = login.find({
         id_proprio : req.params?.id
     });
-    defaultAnswer(res,list_impots,"No tax playements have been registered by this user.");
+    defaultAnswer(res,list_impots.impots,"No tax playements have been registered by this user.");
 }
+
 
 const addImpot = async(req,res) => {
     const new_impots = new impots({
         ...req.body
     });
-    const account = login.findById(
+    login.findById(
             req.params.id,async (err,success)=>{
                 if(!err){
                     if(!success){
@@ -36,11 +37,13 @@ const addImpot = async(req,res) => {
                         result.save((saveErr,success) => {
                             if(saveErr){
                                 res.status(200).json({
-                                    "message" : "Unable to save this tax"
+                                    "message" : "Unable to save this tax",
+                                    "type" : "error"
                                 })
                             }else{
                                 res.status(200).json({
-                                    "message" : "This tax has been successfully registered"
+                                    "message" : "This tax has been successfully registered",
+                                    "type" : "success"
                                 })
                             }
                         });
