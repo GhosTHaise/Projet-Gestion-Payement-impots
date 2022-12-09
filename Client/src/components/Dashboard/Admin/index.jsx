@@ -1,8 +1,9 @@
-import React from 'react'
-
+import SideBar from "./SideBar"
 const index = () => {
   return (
-    <h1>Admin</h1>
+    <div>
+      <SideBar />
+    </div>
   )
 }
 
