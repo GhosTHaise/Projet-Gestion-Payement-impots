@@ -7,9 +7,9 @@ import{AdminLayout,ClientLayout} from "../../utils/Auth"
 //Dashboard
 const Index = () => {
   return (
-    <m.div className="w-full min-h-[100vh] overflow-hidden bg-dark-blue">
-          <div className={`${styles.paddingX} flex-col ${styles.flexCenter}`}>
-              <div className={`${styles.boxWidth}`}>
+    <m.div className="w-full min-h-[100vh] overflow-hidden bg-white">
+          <div className={`${styles.paddingX} flex-col ${styles.flexCenter} bg-dark-blue`}>
+              <div className={`w-full`}>
                   <Navbar />
               </div>
               <div className={`${styles.boxWidth} `}>

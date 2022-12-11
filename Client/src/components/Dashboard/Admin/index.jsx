@@ -1,8 +1,7 @@
-import SideBar from "./SideBar"
+import SideBar from "../SideBar"
 const index = () => {
   return (
     <div>
-      <SideBar />
     </div>
   )
 }

@@ -30,7 +30,7 @@ const Schema_user = mongoose.Schema({
     zipCode : {type : String,requied : true},
     profil : {type : String,default : "default.png"},
     password : {type : String,required : true},
-    status : {type : String , default : "client/normal"},
+    status : {type : String , default : "client"},
     habilitations : [Schema_habilitation],
     impots : [Schema_impots]
 });

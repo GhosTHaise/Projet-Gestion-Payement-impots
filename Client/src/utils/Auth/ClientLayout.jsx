@@ -5,7 +5,7 @@ const ClientLayout = ({children}) => {
     if(sessionTKit.user?.status == "Client"){
         return (
             <Fragment>
-                ClientLayout
+                {children}
             </Fragment>
           )
     }

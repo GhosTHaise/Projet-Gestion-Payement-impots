@@ -1,8 +1,8 @@
-import React from 'react'
-
+import SideBar from "../SideBar"
 const index = () => {
   return (
-    <h2>Client</h2>
+    <div>
+    </div>
   )
 }
 

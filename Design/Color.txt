@@ -1,3 +1,16 @@
 orange : "#FF4820"
 white : "FFFCFC"
 greyDArk : "707070"
+
+//primary-background
+background : linear-gradient(to bottom,#040C18,#041E47);
+
+//glass-background
+background : linear-gradient(to right, #373737,#2E2E2E);
+intensite blur : 39px
+luminosite : 15
+
+
+//Navbar
+container : #061227;
+upper-container : #071C40
