@@ -114,3 +114,18 @@ export const registeredRoutes = [
         
     }
 ]
+
+export const navMenu = [
+    {
+        id : "home-menu",
+        name : "Home"
+    },
+    {
+        id : "account-menu",
+        name : "Accounts",
+    },
+    {   
+        id : "taxes-menu",
+        name : "Taxes"
+    }
+]
