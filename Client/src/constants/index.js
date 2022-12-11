@@ -115,7 +115,7 @@ export const registeredRoutes = [
     }
 ]
 
-export const navMenu = [
+export const navMenus = [
     {
         id : "home-menu",
         name : "Home"
