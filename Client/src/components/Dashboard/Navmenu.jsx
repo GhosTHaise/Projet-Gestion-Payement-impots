@@ -1,11 +1,13 @@
 import { navMenus } from "../../constants"
-const Navmenu = () => {
+import { useState } from "react";
+const Navmenu = ({actual_selected}) => {
+  const [actualMenu,setActualMenu] = useState(0);
   return (
     <div className="sm:flex hidden bg-[#061227] rounded-full">
-      <ul className="flex px-4">
+      <ul className="flex ">
           {
             navMenus.map((navMenu,index)=> (
-              <li className="px-6 py-5 text-white cursor-pointer">
+              <li onClick={() => setActualMenu(index)} className={`px-8 py-5 text-white cursor-pointer ${index == actualMenu ? "rounded-full bg-[#071C40]" : ""}`}>
                     {navMenu.name}
               </li>
             ))

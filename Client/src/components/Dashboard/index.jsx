@@ -8,7 +8,7 @@ import{AdminLayout,ClientLayout} from "../../utils/Auth"
 const Index = () => {
   return (
     <m.div className="w-full min-h-[100vh] overflow-hidden bg-white">
-          <div className={`${styles.paddingX} flex-col ${styles.flexCenter} bg-dark-blue`}>
+          <div className={`${styles.paddingX} flex-col ${styles.flexCenter} bg-[#040C18]`}>
               <div className={`w-full`}>
                   <Navbar />
               </div>

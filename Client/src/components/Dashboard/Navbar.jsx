@@ -1,15 +1,18 @@
-import {useContext} from 'react'
+import {useContext,useState} from 'react'
 import Logo from '../Logo'
 import {bell,power,user} from "../../assets"
 import styles from "../../style"
 import { DataContext } from '../../context'
 import Navmenu from './Navmenu'
+import { AdminLayout } from '../../utils/Auth'
 const Navbar = () => {
   const {sessionTKit} = useContext(DataContext);
   return (
     <div className="w-full flex py-4 justify-between items-center navbar">
           <Logo />
-          <Navmenu />
+          <AdminLayout>
+                  <Navmenu  />
+          </AdminLayout>
           <div className={`${styles.flexCenter} gap-[40px]`}>
                   <div className={styles.flexCenter}>
                         <img className='w-[40px] h-[40px] mr-4' src={user} alt="user" />
