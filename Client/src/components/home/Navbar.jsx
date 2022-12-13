@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import { navlinks } from '../../constants'
 import { menu , close } from '../../assets';
-import {DataContext} from '../../context';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [Toggle, setToggle] = useState(false);

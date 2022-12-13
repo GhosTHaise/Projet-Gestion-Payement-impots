@@ -92,7 +92,10 @@ const ContextProvider = (props) => {
         }),
         [user]
     )
-    
+    //Dashboard
+    const [actualMenu,setActualMenu] = useState(0);
+    const navMenuItems = {actualMenu,setActualMenu}
+    //end
     return (
         <DataContext.Provider value={
             {
@@ -100,7 +103,8 @@ const ContextProvider = (props) => {
                 navigate,
                 location,
                 fecthDataCall,
-                registeredState
+                registeredState,
+                navMenuItems
             }
         }>
             {props.children}

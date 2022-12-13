@@ -1,13 +1,14 @@
 import { navMenus } from "../../constants"
-import { useState } from "react";
+import { useState ,useContext} from "react";
+import { DataContext } from "../../context";
 const Navmenu = ({actual_selected}) => {
-  const [actualMenu,setActualMenu] = useState(0);
+  const {navMenuItems} = useContext(DataContext);
   return (
-    <div className="sm:flex hidden bg-[#061227] rounded-full">
+    <div className="md:flex hidden bg-[#061227] rounded-full">
       <ul className="flex ">
           {
             navMenus.map((navMenu,index)=> (
-              <li onClick={() => setActualMenu(index)} className={`px-8 py-5 text-white cursor-pointer ${index == actualMenu ? "rounded-full bg-[#071C40]" : ""}`}>
+              <li key={navMenu.id} onClick={() => navMenuItems.setActualMenu(index)} className={`px-8 py-5 text-white cursor-pointer ${index == navMenuItems.actualMenu ? "rounded-full bg-[#071C40]" : ""}`}>
                     {navMenu.name}
               </li>
             ))

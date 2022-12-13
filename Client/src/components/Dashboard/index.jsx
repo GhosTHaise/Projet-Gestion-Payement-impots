@@ -12,6 +12,8 @@ const Index = () => {
               <div className={`w-full`}>
                   <Navbar />
               </div>
+        </div>
+        <div className={`${styles.paddingX}`}>
               <div className={`${styles.boxWidth} `}>
                     <AdminLayout>
                           <Admin />
@@ -19,7 +21,7 @@ const Index = () => {
                     <ClientLayout>
                           <Client />
                     </ClientLayout>
-              </div>
+             </div>
         </div>
     </m.div>
     
