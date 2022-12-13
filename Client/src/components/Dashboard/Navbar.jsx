@@ -8,7 +8,7 @@ import { AdminLayout } from '../../utils/Auth'
 import { menu , close } from '../../assets'
 import { navMenus } from '../../constants'
 const Navbar = () => {
-  const {sessionTKit} = useContext(DataContext);
+  const {sessionTKit,navMenuItems} = useContext(DataContext);
   const [Toggle, setToggle] = useState(false);
   return (
     <div className="w-full flex py-4 justify-between items-center navbar">
@@ -35,7 +35,7 @@ const Navbar = () => {
                             <ul className='list-none flex justify-end flex-col items-end flex-1'> 
                                  {
                                     navMenus.map((navMenu,index)=>(
-                                          <li className='font-poppins font-normal cursor-pointer text-white text-[16px]
+                                          <li key={navMenu.id} onClick={()=>{navMenuItems.setActualMenu(index)  ;/* <--> */ setToggle(false)}} className='font-poppins font-normal cursor-pointer text-white text-[16px]
                                           mb-5'>
                                                 {navMenu.name}
                                           </li>
