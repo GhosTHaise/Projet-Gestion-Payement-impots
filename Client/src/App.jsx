@@ -4,7 +4,7 @@ import {Home,Login,Register,Dashboard} from "./components"
 import { DataContext } from './context';
 import { AnimatePresence } from 'framer-motion';
 import { ProtectedLayout,HomeLayout } from './utils/Auth';
-
+import { serveur } from './constants';
 const App = () => { 
     const {sessionTKit,fecthDataCall,navigate,location} = useContext(DataContext);
     const [test, settest] = useState([]);
@@ -22,7 +22,7 @@ const App = () => {
             }
             sessionTKit.login(response);
         }
-        fecthData("https://localhost:4430/api/loginSession")
+        fecthData(`${serveur.url}/loginSession`)
     },[])
 
     //{console.log("Session :",sessionTKit.user);}

@@ -3,7 +3,7 @@ import { useState } from "react"
 
 
 export const serveur = {
-    url : "https://localhost:4000/api"
+    url : "http://localhost:4000/api"
 }
 export const navlinks = [
     {
