@@ -20,7 +20,7 @@ const Accounts = () => {
     return () => {
         fecthUserData();
     };
-  }, []);
+  }, [modalIsOpen]);
 
   const deleteUser = async (_id) => {
     axios.delete(`${serveur.url}/user/${_id}`).then(response => {
@@ -90,7 +90,7 @@ const Accounts = () => {
           </div>
       <div className="grid grid-cols-1 gap-4 md:hidden">
             {Users.map((user,index)=> (
-              <div className="bg-white space-y-3 p-4 rounded-lg shadow-xl">
+              <div key={index} className="bg-white space-y-3 p-4 rounded-lg shadow-xl">
               <div className="flex gap-4 flex-col  items-start  space-x-2 text-sm">
                 <div className="flex space-x-2">
                     <div>
@@ -117,7 +117,7 @@ const Accounts = () => {
                   {user.city} , {user.address}
                 </div>
                 <div className="flex pr-4">
-                  <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
+                  <button onClick={()=> {setUser_id(user._id);setIsOpen(true)}} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
                     Update
                   </button>
                   <button onClick={()=> deleteUser(user._id)} className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">

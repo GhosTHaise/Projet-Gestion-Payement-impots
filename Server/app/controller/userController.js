@@ -26,7 +26,8 @@ const userInfoUpdate = async(req,res) => {
             message : "Your informations has been successfully update ."
         })
     }).catch( e => {
-        res.status(400).json({
+        res.status(200).json({
+            type : "error",
             message : "Unable to take your request, please try later !"
         })
     });
