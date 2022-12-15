@@ -1,7 +1,20 @@
 import styles from "../../../../style"
 import { accountsRow } from "../../../../constants"
+import {useEffect,useState,use} from "react"
+import { serveur } from "../../../../constants";
+import axios from "axios";
 
 const Accounts = () => {
+  const [Users, setUsers] = useState([]);
+  useEffect(() => {
+    return () => {
+        axios.get(`${serveur.url}/user/all`).then(response=> {
+            console.log(response.data)
+        }).catch(err => {
+          console.log("Unable to get user data : "+err)
+        })
+    };
+  }, []);
   return (
     <div className={`${styles.paddingY}`}>
           <div className={` w-full rounded-lg shadow hidden md:block overflow-auto`}>
@@ -9,8 +22,8 @@ const Accounts = () => {
                   <thead className="bg-gray-50 border-b-2 border-gray-200">
                     <tr>
                       {
-                        accountsRow.map((accountRow, key) => (
-                          <th className="text-[16px] p-3 text-sm font-poppins fonr-semibold text-left">
+                        accountsRow.map((accountRow, index) => (
+                          <th key={accountRow.id} className="text-[16px] p-3 text-sm font-poppins fonr-semibold text-left">
                             {accountRow.row}
                           </th>
                         ))
@@ -32,10 +45,10 @@ const Accounts = () => {
                       </td>
                       <td className="py-2">
                         <div className="flex pr-4">
-                          <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
+                          <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
                             Update
                           </button>
-                          <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                          <button className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
                             Delete
                           </button>
                         </div>
@@ -72,10 +85,10 @@ const Accounts = () => {
               Anatananarivo , ITR 27
             </div>
             <div className="flex pr-4">
-              <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
+              <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
                 Update
               </button>
-              <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+              <button className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
                 Delete
               </button>
             </div>

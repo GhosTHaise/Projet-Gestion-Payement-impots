@@ -10,9 +10,7 @@ const userInfo = async(req,res) => {
 }
 
 const allUserinfo = async(req,res) => {
-    const data =  await login.find({
-        _id : { $ne : req.body.id}
-    });
+    const data =  await login.find({});
     data?.length > 0 ? res.status(200).json(data) 
     : res.status(200).json({"message" : "No account registered"})
 }
