@@ -4,9 +4,11 @@ import {useEffect,useState,use} from "react"
 import { serveur } from "../../../../constants";
 import axios from "axios";
 import {toast} from "react-toastify"
-
+import ModalView from "../Modal";
 const Accounts = () => {
   const [Users, setUsers] = useState([]);
+  const [User_id, setUser_id] = useState("");
+  const [modalIsOpen, setIsOpen] = useState(false);
   const fecthUserData = () => {
         axios.get(`${serveur.url}/user/all`).then(response=> {
           setUsers(response.data);
@@ -73,7 +75,7 @@ const Accounts = () => {
                       </td>
                       <td className="py-2">
                         <div className="flex pr-4">
-                          <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
+                          <button onClick={()=> {setUser_id(user._id);setIsOpen(true)}} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2">
                             Update
                           </button>
                           <button onClick={()=> deleteUser(user._id)} className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
@@ -126,6 +128,8 @@ const Accounts = () => {
             </div>
             ))}
       </div>
+
+      <ModalView isOpen={modalIsOpen} setIsOpen={setIsOpen} user_id={User_id} />
     </div>
     
   )

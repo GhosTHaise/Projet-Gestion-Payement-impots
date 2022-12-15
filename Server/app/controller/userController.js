@@ -3,10 +3,10 @@ const {login} = require("../model/Schema");
 
 const userInfo = async(req,res) => {
     const data = await login.findOne({_id : req.params.id});
-    data?.length != 1 ? res.status(400).json({
+    !data._id ? res.status(400).json({
         error : "No account match with this id !"
     }) : res.status(200).json(data);
-    console.log(req.session.user)
+    console.log("le grnasd"+data)
 }
 
 const allUserinfo = async(req,res) => {
