@@ -1,7 +1,8 @@
 const {impotController} = require("../../controller")
 
 const impotRoutes = (Router) => {
-    Router.post("/api/impots/:id",impotController.impotByUser);
+    Router.get("/api/impots/:id",impotController.impotByUser);
+    Router.post("/api/impots",impotController.addImpot)
 }
 
 module.exports = impotRoutes;
