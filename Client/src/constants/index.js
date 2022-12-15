@@ -129,3 +129,40 @@ export const navMenus = [
         name : "Taxes"
     }
 ]
+
+//accounts table row
+export const  accountsRow = [ 
+    {
+        id : "row0",
+        row : "ID",
+    },
+    {
+        id : "row1",
+        row : "Firstname",
+    }
+    ,
+    {
+        id : "row2",
+        row : "Lastname",
+    },
+    {
+        id : "row3",
+        row : "E-mail",
+    },
+    {
+        id : "row4",
+        row : "City",
+    },
+    {
+        id : "row5",
+        row : "Address",
+    },
+    {
+        id : "row6",
+        row : "Status",
+    },
+    {
+        id : "row7",
+        row : "Actions",
+    }
+]

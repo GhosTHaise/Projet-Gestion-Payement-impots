@@ -7,13 +7,13 @@ const index = () => {
   const renderSwitch = (param) => {
     switch(param){
       case 0:
-        <Hero />
+        return <Hero />
         break;
       case 1 :
-        <Accounts />
+        return <Accounts />
         break;
       case 2 :
-        <Taxes />
+        return <Taxes />
         break;
     }
   }
