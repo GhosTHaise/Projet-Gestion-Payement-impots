@@ -38,6 +38,11 @@ const userInfoDelete = async (req,res) => {
         res.status(200).json({
             message :  "This user has been succesfully removed."
         })
+    }).catch(err=> {
+        res.status(200).json({
+            type : "error",
+            message : "Unable to remove this user." 
+        })
     })
 }
 
