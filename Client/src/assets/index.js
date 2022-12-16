@@ -14,6 +14,7 @@ import circleActive from "./circleActive.svg"
 import angleRight from "./angle-right.svg"
 import user from "./userwhite.png"
 import animated from "./animated.svg"
+import impots from "./impots.jpg"
 
 export {
     close,
@@ -31,5 +32,6 @@ export {
     bell,
     power,
     user,
-    animated
+    animated,
+    impots
 }
