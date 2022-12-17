@@ -1,14 +1,14 @@
 const {login} = require("../model/Schema");
 
 const defaultAnswer = (...params) => {
-    const httpResponse = params.res?.status(200);
-    if(succes?.length > 0){
+    const httpResponse = params[0]?.status(200);
+    if(params[1]?.length > 0){
         httpResponse.json({
-            data : params.success
+            data : params[1]
         })
     }else{
         httpResponse.json({
-            message : params.error
+            message : params[2]
         })
     }
 }

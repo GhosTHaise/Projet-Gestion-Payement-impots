@@ -1,3 +1,4 @@
+const { response } = require('express');
 const mongoose = require('mongoose');
 require("dotenv").config()
 mongoose.connect(process.env.MONGODB_URI,
@@ -16,7 +17,8 @@ const Schema_habilitation = mongoose.Schema({
 const Schema_impots = mongoose.Schema({
     Somme : { type : Number, required : true},
     date_payement : {type : String, required : true},
-    facture : { type : String, required : true}
+    facture : { type : String, required : true},
+    
 });
 
 const Schema_user = mongoose.Schema({
@@ -30,15 +32,35 @@ const Schema_user = mongoose.Schema({
     zipCode : {type : String,requied : true},
     profil : {type : String,default : "default.png"},
     password : {type : String,required : true},
-    status : {type : String , default : "client"},
+    status : {type : String , default : "Client"},
     habilitations : [Schema_habilitation],
     impots : [Schema_impots]
 });
-
-
-
+//create default admin account
+const login = mongoose.model('login',Schema_user)
+mongoose.model('login',Schema_user).find({
+    firstname : "Administrateur",
+    lastname : "Supreme",
+    email : "admin@gmail.com",
+    status : "Admin"
+}).then( async response =>{
+    if(response.length == 0){
+        await new login({
+            firstname : "Administrateur",
+            lastname : "Supreme",
+            email : "admin@gmail.com",
+            status : "Admin",
+            password : "admin1234",
+            address : "Anywhere",
+            telephone : "+261 xx xx xxx xx",
+            country : "Madagascar",
+            city: "Antananarivo",
+            zipCode : "xxx"
+        }).save();
+    }
+})
 module.exports = {
-    login : mongoose.model('login',Schema_user),
+    login ,
     impots  : mongoose.model("impots",Schema_impots),
     habilitations : mongoose.model("habilitations",Schema_habilitation)
 }

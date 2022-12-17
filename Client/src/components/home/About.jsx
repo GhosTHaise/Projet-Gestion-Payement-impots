@@ -13,9 +13,10 @@ const About = () => {
             <p className={` border-l-2 border-dimWhite font-poppins font-normal text-dimWhite text-[16px] leading-[17px] px-2 mb-3`}>What is E-Tax ?</p>
             <h2 className={styles.heading2}>Easily pay your <br className="sm:block hidden" /> taxes & control it.</h2>
             <p className={`${styles.paragraph} max-w-[470px] mt-6`}>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-              Unde, quidem vel. Sit dignissimos optio voluptates, 
-              sed perspiciatis sunt tenetur possimus.
+            Taxes are used by the government for carrying out various welfare 
+            schemes including employment programmes. 
+            There are Lakhs of employees in various departments and 
+            the administrative cost has to be borne by the Government..
             </p>
         </div>    
     </section>

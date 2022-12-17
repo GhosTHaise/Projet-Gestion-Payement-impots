@@ -1,0 +1,22 @@
+
+compte Administrateur :
+    email : admin@gmail.com
+    password : admin1234
+    
+Ce projet a ete realise a partir du template react pris avec vite.
+
+>npm install vite
+
+Pour lancer l'appli : 
+    - dossier Client 
+        > npm run dev
+
+    - dossier Server
+        > npm start    
+        
+ GROUPES : 
+ RANDRIAMBOLOLOMANANA Nomentsoa Sambatra Fitiavana
+ RAKOTOARISON Iantsa Ny Aina
+ RAMBOLAMANANA Baliaka Sandaniavo
+ RANDRIANARIVELO Notahiana Kevin
+ ANDRIAMIHAJA Harentsoa Toavina
